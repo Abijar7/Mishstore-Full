@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MishStore — Premium Watches & Wearables</title>
+  <meta name="description" content="MishStore — curated premium watches and wearables. Secure checkout, global shipping." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#">MishStore</a>
+      <nav class="nav">
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="controls">
+        <button id="themeToggle" aria-label="Toggle theme">🌓</button>
+        <button id="cartBtn" aria-label="Open cart">🛒 <span id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1>Elevate every moment with MishStore</h1>
+          <p>Curated timepieces & wearables crafted for style and reliability. Free shipping over $150. 30-day returns.</p>
+          <a class="cta" href="#products">Shop Collections</a>
+        </div>
+        <div class="hero-media">
+          <img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=1400&auto=format&fit=crop" alt="Hero watch" />
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="wrap section">
+      <div class="section-head">
+        <h2>Featured Products</h2>
+        <div class="controls-inline">
+          <input id="search" placeholder="Search products or SKU" aria-label="Search products" />
+          <select id="sort">
+            <option value="featured">Featured</option>
+            <option value="priceAsc">Price: Low → High</option>
+            <option value="priceDesc">Price: High → Low</option>
+            <option value="nameAsc">Name: A → Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="grid" class="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="about" class="wrap section about">
+      <h3>About MishStore</h3>
+      <p>MishStore is a boutique online store focused on carefully selected watches and wearables — combining quality materials, modern design, and honest pricing.</p>
+      <ul class="bullets">
+        <li>Secure checkout (PCI compliant integrations available)</li>
+        <li>30-day returns & 1-year limited warranty</li>
+        <li>Worldwide shipping & responsive customer support</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="wrap section contact">
+      <h3>Contact & Sales</h3>
+      <form id="contactForm" class="contact-form">
+        <input required placeholder="Your name" name="name" />
+        <input required type="email" placeholder="Email" name="email" />
+        <textarea required placeholder="Message" name="message"></textarea>
+        <button type="submit" class="btn primary">Send message</button>
+      </form>
+    </section>
+  </main>
+
+  <aside id="cart" class="cart" aria-hidden="true">
+    <div class="cart-head">
+      <h4>Your Cart</h4>
+      <button id="closeCart" aria-label="Close cart">✕</button>
+    </div>
+    <ul id="cartItems" class="cart-items"></ul>
+    <div class="cart-foot">
+      <div class="subtotal">Subtotal: <strong id="subtotal">$0</strong></div>
+      <div class="cart-actions">
+        <button id="checkoutBtn" class="btn primary" disabled>Checkout</button>
+        <button id="clearCart" class="btn">Clear</button>
+      </div>
+      <p class="small">Demo checkout — no payments. Cart stored in your browser.</p>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>© <span id="year"></span> MishStore Ltd.</div>
+      <nav class="footer-nav">
+        <a href="#terms">Terms</a>
+        <a href="#privacy">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Product detail modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true">
+      <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
